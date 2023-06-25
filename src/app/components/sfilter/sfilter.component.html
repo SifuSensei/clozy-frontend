@@ -1,0 +1,18 @@
+<div class="card mb-5 text-center">
+  <img src="{{ Seasonings.picture }}" class="card-img-top" alt="..." />
+  <div class="card-body bod">
+    <h5 class="card-title">{{ Seasonings.name }}</h5>
+    <p class="card-text">{{ Seasonings.price | currency }}</p>
+    <div class="ttt">
+      <a
+        type="button"
+        class="btn btn-dark me-2"
+        (click)="addToCart(Seasonings)"
+        placement="top"
+        ngbPopover="Thank you For shopping with us"
+        popoverTitle="Added To Cart"
+        >Add To Cart</a
+      >
+    </div>
+  </div>
+</div>

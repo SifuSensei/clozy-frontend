@@ -1,1 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
+
+html { height: 100%; box-sizing: border-box; }
+
+body{
+    background-color: #CCD5FF !important;
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+    position: relative;
+    min-height: 100%;
+    box-sizing: inherit;
+}
+::selection {
+    color: #E7BBE3;
+    background: #b7c1ea ;
+  }
+.pad {
+    padding-bottom: 20em;
+}
+.active{
+
+    text-decoration: underline 0.2em;
+    text-underline-offset: 0.5em;
+}
+.hover:hover {
+    cursor: pointer;
+    text-decoration: underline 0.2em;
+    text-underline-offset: 0.5em;
+}
+.bod {
+    background-color: #E7BBE3
+}
+
+::-webkit-scrollbar {
+    width: 1em;
+    
+}
+::-webkit-scrollbar-track{
+    background-color: #2d2b2b;
+    border-radius: 100vw;
+    margin-block: 0.5em;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #E7BBE3;
+  border-radius: 100vw;
+}
+.card-title{
+    max-width: 25ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+@import "swiper/scss";
+@import "swiper/scss/navigation";
+@import "swiper/scss/pagination";

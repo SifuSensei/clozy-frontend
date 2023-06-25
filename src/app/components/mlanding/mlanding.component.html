@@ -1,0 +1,45 @@
+<div class="pad">
+     <div class=" remove text-center">
+            <div class="" [@fadeIn]>
+
+            <img src="https://r4.wallpaperflare.com/wallpaper/449/353/223/lionel-messi-4k-wallpaper-a816ed38e0402cc8f0bc41ce983244fa.jpg" alt="athlete" class="img-fluid fiimage col-4 ">
+            <img src="https://r4.wallpaperflare.com/wallpaper/202/367/645/5c1c8e2196edd-wallpaper-a8f60d7890b05ce8000c11ee7842944a.jpg" alt="athlete" class="img-fluid fiimage col-4 ">
+            <img src="https://r4.wallpaperflare.com/wallpaper/177/219/623/usain-bolt-men-tracks-sport-wallpaper-09d0d84d516abd0b96f7f88f00b1c6ad.jpg" alt="athlete" class="img-fluid fiimage col-4 ">
+            
+            </div>
+        </div>
+    <div class="container-fluid">
+
+
+
+        
+        <h1 class="text-center display-1 mb-5">Mens <hr> Clothes for any Occasion</h1>
+        <div class="text-center mb-5">
+            <button class="btn btn-dark button" routerLink="/mens-clothes">Shop Now</button>
+        </div>
+        <div class="middle row text-center">
+           <div class="col-lg-4 col-md-6 col-xs-12" *ngFor="let mid of middle; let i = index">
+            <figure class="sports" [routerLink]="['/mens-clothes', i+18]">
+                <img [src]="mid.image" alt="" class="img-fluid fimage">
+                <figcaption class="display-6">{{mid.se}}</figcaption>
+           </figure>   
+           </div>
+        </div>
+       
+        <div class="row text-center mt-5">
+            <h4 class="display-4 mt-5">Sports</h4>
+            <div class="col" >
+                <swiper  [config]="sConfig">
+                <ng-template swiperSlide *ngFor="let sport of sports; let i = index" >
+                    <figure class="sports" [routerLink]="['/mens-clothes', i+12]">
+                        <img [src]="sport.image" alt="" class="img-fluid fimage">
+                        <figcaption class="display-6">{{sport.se}}</figcaption>
+                   </figure>   
+                </ng-template>
+                    
+                </swiper>
+                    
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair:ital,wght@1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aoboshi+One&display=swap");
+@font-face {
+  font-family: 'Rocher';
+  src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+}
+p {
+  font-family: 'Rocher';
+  font-size: larger;
+}
+.coms {
+  overflow-x: hidden;
+}
+
+.ahone {
+  font-family: 'Rocher';
+  text-align: center;
+  font-size: 50px;
+}
+
+@font-palette-values --Mint {
+  font-family: Rocher;
+  base-palette: 7;
+}
+
+.mint {
+  font-palette: --Mint;
+}
+@keyframes fade {
+  100% {
+    opacity: 1;
+  }
+  10% {
+    transform: translateY(2em);
+  }
+  0% {
+    opacity: 0;
+  }
+}
+
+section {
+  height: 50vh;
+
+}
+
+
+h2 {
+  color: #c4bdb6;
+  font-size: 3em;
+}
+
+h3 {
+  font-size: 3.9em;
+  font-family: "Playfair", serif;
+}
+
+
+
+.videos {
+  object-fit: cover;
+  object-position: 50%;
+  height: 50vh;
+  overflow: hidden;
+}
+.heat {
+    object-fit: cover;
+    object-position: 50%;
+    height: 30vh;
+    overflow: hidden;
+}
+
+.conner {
+  position: relative;
+  margin-bottom: 0;
+  border: 0;
+  border-color: transparent;
+}
+.cap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  text-align: center;
+  color: rgb(45, 44, 44);
+  font-weight: bold;
+}
+
+.v-img {
+  position: relative;
+  z-index: 0;
+}
+.v-con {
+  border: 1px solid black;
+  background-color: #80808080;
+}
+.b-con {
+  border: 1px solid black;
+  background-color: #80808080;
+
+  font-size: 2em;
+}
+.b-con:hover {
+  background-color: #282728;
+  color: #c68816;
+  font-family: "Playfair", serif;
+}
+.break {
+  display: none;
+}
+
+.h-con {
+  display: none;
+}
+.dh {
+  color: #484646;
+}
+
+.muu:hover{
+  cursor: pointer;
+}
+.paddd {
+  margin-bottom: 30em;
+}
+.mur {
+  max-width: 12ch;
+}
+.switch{
+  display: none;
+}
+.sw {
+  display: none;
+}
+
+.lay {
+  padding-bottom: 25em;
+}
+
+.home-image {
+  cursor: pointer;
+  filter: grayscale(100%);
+  transition: filter 800ms ease-in-out;
+}
+.home-image:hover {
+  filter: grayscale(0%);
+  text-decoration: underline 0.3em #c68816;
+  text-underline-offset: 0.3em;
+}
+.shirts span {
+  display: inline-block;   
+}
+
+@media screen and (max-width: 992px) {
+  .medi {
+    margin-top: 30em;
+  }
+  .switch{
+    display: block;
+  }
+  .cap {
+    display: none;
+  }
+  .sw {
+    display: block;
+  }
+  .swi{
+    display: none;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .disap {
+    display: none;
+  }
+  .break {
+    display: block;
+  }
+  .lay{
+    padding-bottom: 0;
+  }
+  .ay{
+    padding-bottom: 55em;
+  }
+}

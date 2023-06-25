@@ -1,0 +1,38 @@
+<div class="pad">
+    <div class="container">
+      <h1 class="display-1 text-center">View Order</h1>
+        <div class="card d-flex " >
+          
+            <div class="card-body bod">
+              <h5 class="card-title display-3 ">Order Id #{{or.id}}</h5>
+              <p class="card-text fs-5"><span class="fw-bold">Ordered On</span>  {{ or.date | date}}</p>
+             
+              
+              <p class="card-text fs-5"><span class="fw-bold">First Name</span>  {{ or.firstname | titlecase}}</p>
+              <p class="card-text fs-5"><span class="fw-bold">Last Name </span>{{ or.lastname | titlecase}}</p>
+              <p class="card-text fs-5"><span class="fw-bold">Delivering To </span>{{ or.address | titlecase}}</p>
+              <p class="card-text fs-5"><span class="fw-bold">Order Total</span> {{ or.total | currency }}</p>
+              <p class="card-text fs-5"><span class="fw-bold">Clothing</span> {{ or.clothes}}</p>
+              <div class="d-flex justify-content-between">
+                <div>
+               <p  class="card-text fs-5"><span class="fw-bold"
+             >Order Status </span> 
+             <span  [ngClass]="{
+                'colorss' : or.status === 'pending',
+                'colors' : or.status === 'on the way',
+                'color' : or.status === 'completed'
+               }">{{ or.status | titlecase}}
+             </span>
+             </p> 
+              </div> 
+              <img src="../../assets/ontheway.png" alt="" class="img-fluid ima" *ngIf="or.status=='on the way'">
+              <img src="../../assets/completed.png" alt="" class="img-fluid ima" *ngIf="or.status=='completed'">
+              <img src="../../assets/pending.png" alt="" class="img-fluid ima" *ngIf="or.status=='pending'">
+           
+              </div>
+            </div>
+           
+    
+          </div>
+    </div>
+</div>

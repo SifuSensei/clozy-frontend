@@ -1,0 +1,38 @@
+<div class="pad">
+   
+<div class="container"> 
+    <h1 *ngIf="seasons[0].category_id == 1" class="display-5 text-center  ooo">Womens Seasonal <hr> Spring</h1>
+    <h1 *ngIf="seasons[0].category_id == 2" class="display-5 text-center  ooo">Womens Seasonal <hr> Summer</h1>
+    <h1 *ngIf="seasons[0].category_id == 3" class="display-5 text-center  ooo">Womens Seasonal <hr> Autumn</h1>
+    <h1 *ngIf="seasons[0].category_id == 4" class="display-5 text-center  ooo">Womens Seasonal <hr> Winter</h1>
+    <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-4">
+        
+        <div class="col-12" *ngFor="let seas of seasons">
+        
+          <div class="card">
+            <img src="{{ seas.picture }}" class="card-img-top" alt="{{seas.name}}" />
+            <div class="card-body bod">
+              <h5 class="card-title">{{ seas.name }}</h5>
+              <p class="card-text">{{ seas.price | currency }}</p>
+              <div class="ttt">
+                <a
+                class="btn btn-dark me-2"
+                (click)="addToCart(seas)"
+                placement="top"
+                ngbPopover="Thank you For shopping with us"
+                popoverTitle="Added To Cart"
+                >Add To Cart</a
+              >
+              <button [routerLink]="['/review/', seas.id]" class="btn btn-dark">
+                Reviews
+              </button>
+              </div>
+              
+            </div>
+    
+            
+          </div>
+        </div>
+      </div>
+</div>
+</div>

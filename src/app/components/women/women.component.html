@@ -1,0 +1,112 @@
+<div class="pad container">
+    <h1 class="text-center display-5 fst-italic my-5">Womens Clothing</h1>
+    <h2 class="text-center display-5">Filter By Category</h2>
+    
+        
+            <nav class="navbar navbar-expand-lg mt-2 fs-5">
+                <div class="container">
+                  <a class="navbar-brand" routerLink="/home" ></a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedcontent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  
+                  <div class="collapse navbar-collapse" id="navbarSupportedcontent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/womens-clothes" routerLinkActive="active">All</a>
+                      </li>
+                     
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/womens-clothes/10" routerLinkActive="active">Sports</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/womens-clothes/5" routerLinkActive="active">Shoes</a>
+                      </li>
+                     
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/womens-clothes/6" routerLinkActive="active">Shirts</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/womens-clothes/7" routerLinkActive="active">Sweater</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/womens-clothes/9" routerLinkActive="active">Pants</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/womens-clothes/8" routerLinkActive="active">Jackets</a>
+                      </li>
+                     
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/womens-clothes/11" routerLinkActive="active">Dance</a>
+                      </li>
+                     
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/womens-clothes/12" routerLinkActive="active">Tennis</a>
+                      </li>
+                     
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/womens-clothes/13" routerLinkActive="active">Basketball</a>
+                      </li>
+                     
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/womens-clothes/14" routerLinkActive="active">Running</a>
+                      </li>
+                     
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/womens-clothes/15" routerLinkActive="active">Football</a>
+                      </li>
+                     
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/womens-clothes/16" routerLinkActive="active">Training</a>
+                      </li>
+                     
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/womens-clothes/17" routerLinkActive="active">Yoga</a>
+                      </li>
+                     
+                    </ul>
+                    
+                    <form class="d-flex" role="search">
+                      
+                      <input class="form-control" type="search" placeholder="Search" aria-label="Search" [ngModelOptions]="{standalone : true}" [(ngModel)]="t">
+                      <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    
+                  </div>
+                  
+                </div>
+              </nav>
+    
+           
+    
+    <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-4">
+    
+    
+        <div class="col-12 "*ngFor="let clothes of clothes | search: t">
+    
+            <div  class="card" >
+    
+    
+            <img src="{{clothes.picture}}" class="card-img-top" alt="...">
+             <div class="card-body bod">
+                  <h5 class="card-title">{{clothes.name}}</h5>
+                  <p class="card-text">{{clothes.price | currency}}</p>
+                  <div class="ttt">
+                    <a type="button" class="btn btn-dark me-2" (click)="addToCart(clothes)" placement="top"
+                    ngbPopover="Thank you For shopping with us"
+                    popoverTitle="Added To Cart">Add To Cart</a>  
+                    <button [routerLink]="['/review/', clothes.id]" class="btn btn-dark">Reviews</button>          
+                  </div>
+                 <div class="ddd">
+                    <a type="button" class="me-2" (click)="addToCart(clothes)" placement="top"
+                    ngbPopover="Thank you For shopping with us"
+                    popoverTitle="Added To Cart">Add To Cart</a>  
+                    <a [routerLink]="['/review/', clothes.id]" class="">Reviews</a>          
+                  </div>
+             </div>
+            
+            </div>
+        </div>
+     </div> 
+    </div>
+    

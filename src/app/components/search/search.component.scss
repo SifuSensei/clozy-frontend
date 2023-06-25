@@ -1,0 +1,17 @@
+.ddd{
+    display: none;
+}
+@media screen and (max-width: 256px){
+    .ttt{
+        display: none;
+    }
+    .ddd{
+        display: block;
+    }
+}
+@media screen and (max-width: 204px){
+    .ddd > a{
+        display: flex;
+    }
+   
+}

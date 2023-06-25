@@ -1,0 +1,58 @@
+<div class="pad container">
+  <h1 class="text-center display-5 mb-5">Reviews of {{review.name | titlecase}}</h1>
+    <div class="row ">
+        <div class="col-lg-6 col-sm-12">
+           <div class="card mb-3">
+            <img src="{{review.picture}}" class="card-img-top" alt="Image of {{review.name}}">
+            <div class="card-body bod">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title">{{review.name}}</h5>
+                <button class="btn btn-dark" (click)="addToCart(review)">Add to Cart</button>
+              </div>
+              
+              <p class="card-text">Price {{review.price | currency}}</p>
+            
+             
+            </div>
+        </div> 
+        </div>
+        <div class="col-lg-6 col-sm-12 scroll">
+          <div *ngIf="bool" class="alert alert-success" role="alert">
+           Review Successfully Posted!
+          </div>
+           <div *ngFor="let r of review.reviews">
+         
+            
+            <p class="t fw-bold">From {{r.username | titlecase}}</p>
+            <ngb-rating  class="stars" [rate]="r.star" ></ngb-rating>
+            <p class="t">{{r.comment}}</p>
+         
+           </div>
+            <button class="btn btn-dark"  (click)="open(content)">Post a review</button>
+        </div>
+    
+        
+    </div>
+    <ng-template #content>
+      <form [formGroup]="reviewForm" (ngSubmit)="submitReview()" class="p-3">
+        <h2 class="text-center display-6" >Review</h2>
+        <div class="mb-3 k">
+          <label class="form-label">Username</label>
+          <input type="text" class="form-control" formControlName="username" />
+        </div>
+    
+        <div class="mb-3 k">
+          <label class="form-label">Comment</label>
+          <textarea class="form-control" rows="3" formControlName="comment"> </textarea>
+        </div>
+        <div class="mb-3 k">
+          <label class="form-label">Star <small class="color">Pick a number 1-5</small></label>
+          <input  type="number" class="form-control" min="0" max="5" formControlName="star" />
+        </div>
+
+        
+        <button type="submit" class="btn btn-dark">Submit</button>
+      </form>
+    </ng-template>
+    </div>
+    

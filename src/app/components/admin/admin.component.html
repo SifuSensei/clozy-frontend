@@ -1,0 +1,184 @@
+<div class="pad container" *ngIf="user.email==='admin@gmail.com'">
+  <div class="row ">
+    <h1 class="text-center display-5 mt-5 mb-3">Admin</h1>
+    
+    <div class="container"></div>
+    <nav class="navbar navbar-expand-lg mb-5 fs-5">
+        <div class="container">
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedcontent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse s" id="navbarSupportedcontent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" routerLink="/admin" routerLinkActive="active">View Orders</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" routerLink="/data" routerLinkActive="active">Order Data</a>
+              </li>
+             
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" (click)="open(content)">Post Clothes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" routerLink="/change" routerLinkActive="active">Delete/Edit Clothes</a>
+              </li>
+            </ul> 
+          </div>
+          
+        </div>
+      </nav>
+      <ng-template #content >
+        <form [formGroup]="pForm" (ngSubmit)="postClothes()" class="p-3">
+          <h2 class="text-center display-6" >Add Clothes</h2>
+          <div class="mb-3 k">
+            <label class="form-label">Category</label>
+            <select class="form-select" aria-label="Default select example" formControlName="category_id">
+              <option *ngFor="let c of cat" [value]="c.id">{{c.type}}</option>
+            </select>
+          </div>
+          <div class="mb-3 k">
+            <label class="form-label">S.</label>
+            <select class="form-select" aria-label="Default select example" formControlName="gender">
+              <option>f</option>
+              <option>m</option>
+            </select>
+          </div>
+          <div class="mb-3 k">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="name" />
+          </div>
+          <div class="mb-3 k">
+            <label class="form-label">Picture</label>
+            <input type="text" class="form-control" formControlName="picture" />
+          </div>
+          <div class="mb-3 k">
+            <label class="form-label">Price</label>
+            <input type="text" class="form-control" formControlName="price" />
+          </div>
+     
+        
+         
+            
+         
+          
+          <button type="submit" class="btn btn-dark mt-3">Add!</button>
+        </form>
+      </ng-template>
+      <div class="alert alert-success" role="alert" *ngIf="b">
+        Item Added
+      </div>
+
+<div class="table-responsive-lg"   *ngIf="aRoute()">
+  <h2 class="text-center display-6">View All Orders</h2>
+  <table
+    class="table  align-middle border-dark"
+   
+  >
+    <thead>
+      <tr>
+        <th scope="col">Order ID</th>
+        <th scope="col">Date</th>
+        <th scope="col">View Order</th>
+        <th scope="col">Change Status</th>
+        <th scope="col">Current Status</th>
+        
+      </tr>
+    </thead>
+    <tbody *ngFor="let or of orders; let i = index">
+      
+      <tr>
+        
+        <th scope="row">{{ i+19 }}</th>
+        <td class="help fs-5 card-title">{{ or.date | date}}</td>
+        <td class="help fs-5"><button class="btn btn-dark" [routerLink]="['/orders/', or.id]">View</button></td>
+        <td class="help fs-5" >
+          <form [formGroup]="patch">
+          <p class="fst-italic text-success" *ngIf="or.status==='completed'">order completed</p>
+          <select class="me-3" id="patch" formControlName="status" (change)="patchStatus(or.id)" *ngIf="or.status!=='completed'">
+            <option>pending</option>
+            <option>on the way</option>
+            <option>completed</option>
+          </select>
+         
+          
+          </form>
+        </td>
+        <td><span class=""> <span [ngClass]="{ 
+            'colorss': or.status==='pending',
+            'colors': or.status==='on the way',
+            'color': or.status==='completed' }">
+            {{or.status | titlecase}}</span></span></td>
+        
+        
+      </tr>
+    </tbody>
+    
+  </table>
+
+
+  
+
+
+</div>
+
+<div class="table-responsive"   *ngIf="cRoute()">
+  <h2 class="text-center display-6">Edit Clothes</h2>
+  <div class="alert alert-success" role="alert" *ngIf="p">Price Updated!</div>
+  <table
+    class="table align-middle"
+   
+  >
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Category ID</th>
+        <th scope="col">S</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Edit Price</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+   
+    <tbody *ngFor="let c of clothes; let i = index">
+      
+      <ng-template #pr >
+        <form [formGroup]="priceForm" (ngSubmit)="patchP(c.id)" class="p-3">
+           <h2 class="text-center display-6" >Update Price of {{c.name}}</h2>
+           <div class="mb-3 k">
+              <label class="form-label">Price</label>
+             <input type="number" class="form-control"  formControlName="price" />
+            </div>
+        <button type="submit" class="btn btn-dark" >Update</button>
+        </form>
+     </ng-template>
+    
+
+      <tr>
+        
+        
+        <td class="help fs-5">{{ c.id }}</td>
+        <td class="help fs-5">{{ c.category_id }}</td>
+        <td class="help fs-5">{{ c.gender | titlecase}}</td>
+        <td class="help fs-5">{{ c.name | titlecase}} </td>
+        <td class="help fs-5">{{ c.price | currency}}</td>
+        <td class="help fs-5"><button class="btn btn-dark" (click)="ope(pr)">Edit Price</button></td>
+        <td class="help fs-5"><button class="btn btn-dark" (click)="deleteC(c.id)">Delete</button></td>
+        
+      </tr>
+    </tbody>
+    
+  </table>
+  <div class="alert alert-success" role="alert" *ngIf="deleted"> Item Deleted </div>
+  <div class="alert alert-success" role="alert" *ngIf="p">Price Updated!</div>
+</div>
+
+</div>  
+</div>
+
+<div class="pad container" *ngIf="user.id !== 2">
+  <h2 class="text-center fs-1">Access Denied</h2>
+</div>

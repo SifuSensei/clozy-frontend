@@ -1,0 +1,34 @@
+<div class="container pad">
+    <h1 class="text-center display-1 mb-5">Search Results</h1>
+  <div class="row row-cols-1 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-4">
+
+
+    <div class="col "*ngFor="let search of search ">
+
+        <div  class="card" >
+
+
+        <img src="{{search.picture}}" class="card-img-top" alt="...">
+         <div class="card-body bod">
+              <h5 class="card-title">{{search.name}}</h5>
+              <p class="card-text">{{search.price | currency}}</p>
+              <div class="ttt">
+                <a type="button" class="btn btn-dark me-2" (click)="addToCart(search)" placement="top"
+                ngbPopover="Thank you For shopping with us"
+                popoverTitle="Added To Cart">Add To Cart</a>  
+                <button [routerLink]="['/review/', search.id]" class="btn btn-dark">Reviews</button>          
+              </div>
+              <div class="ddd">
+                <a  class="me-2 teee" (click)="addToCart(search)" placement="top"
+                ngbPopover="Thank you For shopping with us"
+                popoverTitle="Added To Cart">Add To Cart</a>  
+                <a [routerLink]="['/review/', search.id]" class="">Reviews</a>          
+              </div>
+             
+         </div>
+        </div>
+    </div>
+ </div> 
+  
+</div>
+

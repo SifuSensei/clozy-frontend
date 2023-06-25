@@ -1,0 +1,67 @@
+
+.MF-img {
+    object-fit: cover;
+   
+    height: 90vh;
+    
+}
+.M-img {
+    object-fit: cover;
+   
+    height: 40vh;
+    
+}
+
+.ooo {
+    font-family: 'Hachi Maru Pop', cursive;
+    font-size: 3.5em;
+    margin: 2em 0;
+}
+
+
+.h{
+    cursor: pointer;
+}
+
+.h h2:hover{
+   text-decoration: underline;
+   text-underline-offset: 0.3em;
+}
+.abold { color: #d3dbfc; 
+    text-shadow: 1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000,
+    0px 2px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 0px 0 #000,
+    1px 2px 0 #000,
+    -1px 2px 0 #000,
+    1px -2px 0 #000,
+    -1px -2px 0 #000,
+    2px 1px 0 #000,
+    -2px 1px 0 #000,
+    2px -1px 0 #000,
+    -2px -1px 0 #000;
+}
+
+.summer {
+    color: beige;
+}
+.details {
+    background-image: linear-gradient(45deg, rgba(75, 109, 151, 0.3) 0%, rgba(75, 109, 151, 0.3) 7%,rgba(47, 165, 182, 0.3) 7%, rgba(47, 165, 182, 0.3) 9%,rgba(20, 222, 213, 0.3) 9%, rgba(20, 222, 213, 0.3) 38%,rgba(116, 24, 105, 0.3) 38%, rgba(116, 24, 105, 0.3) 42%,rgba(89, 81, 136, 0.3) 42%, rgba(89, 81, 136, 0.3) 58%,rgba(34, 194, 198, 0.3) 58%, rgba(34, 194, 198, 0.3) 61%,rgba(61, 137, 167, 0.3) 61%, rgba(61, 137, 167, 0.3) 83%,rgba(102, 52, 120, 0.3) 83%, rgba(102, 52, 120, 0.3) 100%),linear-gradient(45deg, rgba(179, 180, 240, 0.3) 0%, rgba(179, 180, 240, 0.3) 12.5%,rgba(203, 187, 249, 0.3) 12.5%, rgba(203, 187, 249, 0.3) 25%,rgba(132, 166, 221, 0.3) 25%, rgba(132, 166, 221, 0.3) 37.5%,rgba(191, 184, 244, 0.3) 37.5%, rgba(191, 184, 244, 0.3) 50%,rgba(167, 177, 235, 0.3) 50%, rgba(167, 177, 235, 0.3) 62.5%,rgba(120, 163, 216, 0.3) 62.5%, rgba(120, 163, 216, 0.3) 75%,rgba(144, 170, 225, 0.3) 75%, rgba(144, 170, 225, 0.3) 87.5%,rgba(156, 173, 230, 0.3) 87.5%, rgba(156, 173, 230, 0.3) 100%),linear-gradient(230deg, rgb(131, 231, 153),rgb(9, 22, 218));
+}
+.details-panel {
+    height: 75vh !important;
+    background-image: radial-gradient(circle at bottom center, rgb(233, 153, 18) 0%, rgb(233, 153, 18) 4%,rgb(229, 139, 24) 4%, rgb(229, 139, 24) 8%,rgb(225, 125, 29) 8%, rgb(225, 125, 29) 12%,rgb(221, 112, 35) 12%, rgb(221, 112, 35) 16%,rgb(216, 98, 41) 16%, rgb(216, 98, 41) 20%,rgb(212, 84, 46) 20%, rgb(212, 84, 46) 24%,transparent 24%, transparent 100%),radial-gradient(circle at top center, rgb(233, 153, 18) 0%, rgb(233, 153, 18) 3%,rgb(229, 139, 24) 3%, rgb(229, 139, 24) 9%,rgb(225, 125, 29) 9%, rgb(225, 125, 29) 12%,rgb(221, 112, 35) 12%, rgb(221, 112, 35) 15%,rgb(216, 98, 41) 15%, rgb(216, 98, 41) 18%,rgb(212, 84, 46) 18%, rgb(212, 84, 46) 21%,transparent 21%, transparent 100%),radial-gradient(circle at center left, rgb(233, 153, 18) 0%, rgb(233, 153, 18) 3%,rgb(229, 139, 24) 3%, rgb(229, 139, 24) 9%,rgb(225, 125, 29) 9%, rgb(225, 125, 29) 12%,rgb(221, 112, 35) 12%, rgb(221, 112, 35) 15%,rgb(216, 98, 41) 15%, rgb(216, 98, 41) 18%,rgb(212, 84, 46) 18%, rgb(212, 84, 46) 21%,transparent 21%, transparent 100%),radial-gradient(circle at center right, rgb(233, 153, 18) 0%, rgb(233, 153, 18) 3%,rgb(229, 139, 24) 3%, rgb(229, 139, 24) 9%,rgb(225, 125, 29) 9%, rgb(225, 125, 29) 12%,rgb(221, 112, 35) 12%, rgb(221, 112, 35) 15%,rgb(216, 98, 41) 15%, rgb(216, 98, 41) 18%,rgb(212, 84, 46) 18%, rgb(212, 84, 46) 21%,rgb(208, 70, 52) 21%, rgb(208, 70, 52) 100%);
+    
+}

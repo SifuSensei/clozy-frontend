@@ -1,0 +1,33 @@
+li:hover {
+    text-decoration: underline 0.2em;
+    text-underline-offset: 0.3em;
+    cursor: pointer;
+    
+}
+  .navbar-nav {
+    float:none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
+}
+
+.navbar-nav > li {
+    display: inline-block;
+    float:none;
+}
+  
+  .navbar .navbar-collapse {
+    text-align: center;
+  }
+  .navbar .navbar-collapse li {
+    margin-right: 1em;
+  }
+  .active{
+
+    text-decoration: underline 0.2em;
+    text-underline-offset: 0.5em;
+    
+}
+canvas {
+    font-size: 2em;
+}

@@ -1,0 +1,20 @@
+<form [formGroup]="loginForm " (ngSubmit)="login()" class="p-3 container">
+    <h2 class="text-center display-6" >Login</h2>
+     <div class="alert alert-danger" role="alert" *ngIf="invalid">
+      Incorrect Email/Password
+    </div>
+    <div class="alert alert-success" role="alert" *ngIf="valid">
+      Login success
+    </div>
+    <div class="mb-3 k">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" formControlName="email" />
+    </div>
+    <div class="mb-3 k">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" formControlName="password" />
+    </div>
+    <button type="submit" class="btn btn-dark mt-3">Login</button>
+   
+    
+</form>

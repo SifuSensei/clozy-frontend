@@ -1,0 +1,51 @@
+
+.fig:hover, .sports:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 0.9em;
+}
+
+
+.fimage {
+    
+    object-fit: cover;
+    object-position: 50%;
+    height: 50vh;
+    overflow: hidden;
+}
+.fiimage {
+    cursor: pointer;
+    object-fit: contain;
+    object-position: 50%;
+    height: 50vh;
+    overflow: hidden;
+}
+.if {
+    object-fit: cover;
+    object-position: 50%;
+    height: 30vh;
+    overflow: hidden;
+}
+
+.swiper-button-next,.swiper-button-prev{
+    color: black;
+    background-color: aliceblue;
+    border-radius: 5em;
+    width: 5em; height: 5em;   
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover{
+   color: #E7BBE3;
+   background-color: rgb(174, 168, 168);
+}
+.swiper{
+    padding-bottom: 5em;
+} 
+.swiper-pagination-bullet-active{
+    background-color: white;
+}
+.swiper-pagination-bullet{
+    
+    width: 1.1em; height: 1.1em;
+    background-color: black;
+}

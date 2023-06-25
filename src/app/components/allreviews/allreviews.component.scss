@@ -1,0 +1,34 @@
+.scroll {
+    border: 2px solid black;
+    padding: 0.2em;
+    background-color: #90bbd6;
+    overflow-y: scroll;
+    height: 50em;
+    
+  }
+  .paddd{
+    padding-bottom: 9em;
+  }
+  .stars{
+    color: #b39c17;
+    font-size: 1.7em;
+  }
+  .u:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 0.1em;
+  }
+  textarea {
+    resize: none;
+  }
+  
+  .icon {
+    
+    width: 15em;
+    height: 15em;
+}
+@media screen and (max-width: 320px) {
+  .swiss {
+    display: none;
+  }
+}

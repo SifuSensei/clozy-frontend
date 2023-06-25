@@ -1,0 +1,38 @@
+<div class="paddd container">
+    <h1 class="display-1 text-center my-5">Reviews</h1>
+    <div class="scroll">
+    <div class="row row-cols-1 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-1" >
+
+    
+        <div class="col" *ngFor="let rev of reviews">
+    
+          <div class="card">
+            <img src="{{rev.clothe.picture}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{rev.clothe.name}}</h5>
+                <ngb-rating  class="stars" [rate]="rev.star" ></ngb-rating>
+                  <p class="card-text fw-bold">From {{rev.username | titlecase}}</p>
+                  <p class="card-text">{{rev.comment}}</p>
+                  <button class="btn btn-dark"[routerLink]="['/review/', rev.clothes_id]">Review !</button>
+            </div>
+
+ 
+         </div>
+        </div> 
+  
+     
+    </div>
+</div>
+    <div class="d-flex text-center justify-content-center align-items-center  mt-5 u" routerLink="/mens-clothes">
+
+    <p class="display-6"> Shop Now!</p>
+
+    <a>
+        <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bag-heart icon swiss" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
+        </svg>
+    </a>
+    
+    </div>
+
+</div>

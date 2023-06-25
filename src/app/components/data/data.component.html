@@ -1,0 +1,73 @@
+<div class="pad container" *ngIf="user.email==='admin@gmail.com'" >
+    <h1 class="text-center display-6">Admin</h1>
+    <nav class="navbar navbar-expand-lg mb-5 fs-5">
+        <div class="container">
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedcontent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse s" id="navbarSupportedcontent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" routerLink="/admin" routerLinkActive="active">View Orders</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" routerLink="/data" routerLinkActive="active">Order Data</a>
+              </li>
+             
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" (click)="open(content)">Post Clothes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" routerLink="/change" routerLinkActive="active">Delete/Edit Clothes</a>
+              </li>
+            </ul> 
+          </div>
+          
+        </div>
+      </nav>
+      <ng-template #content >
+        <form [formGroup]="pForm" (ngSubmit)="postClothes()" class="p-3">
+          <h2 class="text-center display-6" >Add Clothes</h2>
+          <div class="mb-3 k">
+            <label class="form-label">Category</label>
+            <select class="form-select" aria-label="Default select example" formControlName="category_id">
+              <option *ngFor="let c of cat" [value]="c.id">{{c.type}}</option>
+            </select>
+          </div>
+          <div class="mb-3 k">
+            <label class="form-label">S.</label>
+            <select class="form-select" aria-label="Default select example" formControlName="gender">
+              <option>f</option>
+              <option>m</option>
+            </select>
+          </div>
+          <div class="mb-3 k">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="name" />
+          </div>
+          <div class="mb-3 k">
+            <label class="form-label">Picture</label>
+            <input type="text" class="form-control" formControlName="picture" />
+          </div>
+          <div class="mb-3 k">
+            <label class="form-label">Price</label>
+            <input type="text" class="form-control" formControlName="price" />
+          </div>
+     
+        
+         
+            
+         
+          
+          <button type="submit" class="btn btn-dark mt-3">Add!</button>
+        </form>
+      </ng-template>
+      <h2 class="text-center display-6">Order Data</h2>
+    <div class="chart-wrapper">
+
+      <canvas baseChart width="400px" height="400px" type="bar" [data]="lineChart"  [options]="barChartOptions"></canvas>
+
+    </div>
+</div>
